@@ -12,7 +12,7 @@ if ($chunks[0]->slug == 'hero-unit') { ?>
     </header>
 <?php } ?>
 
-<div id="main" class="span<?php echo $page->layout->theme_layout == 'full_page'?'12':'8'?> clearfix" role="main">
+<div id="main" class="<?php echo $page->layout->theme_layout == 'full_page'?'12':'8'?> clearfix" role="main">
 
 
 

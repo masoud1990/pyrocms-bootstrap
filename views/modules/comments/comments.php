@@ -1,5 +1,3 @@
-<!--<pre><?php //print_r($theme); ?></pre>-->
-<!--<pre><?php //print_r($current_user); ?></pre>-->
 <?php if ($comments): ?>
 
 
@@ -167,10 +165,3 @@
     </section>
 
 <?php endif; // if you delete this the sky will fall on your head  ?>
-    <pre>
-<?php $this->load->model('theme_m');
-            $this->theme_m->_theme = 'bootstrap';
-            $use_bootswatch = $this->theme_m->get_option(array('slug' => 'use_bootswatch'));
-            print_r($use_bootswatch); 
-            echo $use_bootswatch->value; ?>
-            </pre>
