@@ -1,8 +1,14 @@
 {{ theme:partial name="header" }}
-<div id="content" class="clearfix row-fluid">
-	<section id="content">
+			<div id="content" class="clearfix row-fluid">
+			
+				<div id="main" class="span8 clearfix" role="main">
+
 		{{ template:body }}
-	</section>
-        {{ theme:partial name="sidebar" }}
-</div>
+
+        
+				</div> <!-- end #main -->
+    
+				{{ theme:partial name="sidebar" }}
+    
+			</div> <!-- end #content -->
 {{ theme:partial name="footer" }}

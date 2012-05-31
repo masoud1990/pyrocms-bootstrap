@@ -1,22 +1,4 @@
-<!--<pre><?php //print_r($page); ?></pre>-->
-<?php $chunks = $page->chunks;
-if ($chunks[0]->slug == 'hero-unit') { ?>
-    <header>
-
-        <div class="hero-unit">
-
-    <?php echo $chunks[0]->body;array_shift($chunks) ?>
-
-        </div>
-
-    </header>
-<?php } ?>
-
-<div id="main" class="<?php echo $page->layout->theme_layout == 'full_page'?'12':'8'?> clearfix" role="main">
-
-
-
-    <article id="<?php echo $page->id; ?>" class="clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+<article id="<?php echo $page->id; ?>" class="clearfix" role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
         <header>
 
@@ -25,9 +7,9 @@ if ($chunks[0]->slug == 'hero-unit') { ?>
         </header> <!-- end article header -->
 
         <section class="post_content clearfix" itemprop="articleBody">
-<?php foreach ($chunks as $chunk) {
-    echo $chunk->body;
-} ?>
+            <?php foreach ($page->chunks as $chunk) {
+                echo $chunk->body;
+            } ?>
 
         </section> <!-- end article section -->
 
@@ -38,6 +20,3 @@ if ($chunks[0]->slug == 'hero-unit') { ?>
     <?php echo display_comments($page->id); ?>
 <?php endif; ?>
 
-
-
-</div> <!-- end #main -->
