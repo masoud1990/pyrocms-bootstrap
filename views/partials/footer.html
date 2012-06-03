@@ -6,19 +6,14 @@
 		          	{{ widgets:area slug="footer-east" }}
 		          	{{ widgets:area slug="footer-center" }}
 		          	{{ widgets:area slug="footer-west" }}
-		            <?php //if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer1') ) : ?>
-		            <?php //endif; ?>
-		            <?php //if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer2') ) : ?>
-		            <?php //endif; ?>
-		            <?php //if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer3') ) : ?>
-		            <?php //endif; ?>
 		          </div>
 					
 					<nav class="clearfix">
 						{{ navigation:links group="footer" }} <!-- Adjust using Menus in Pyrocms Admin -->
 					</nav>
-					
+					{{ if !variables:no320 }}
 					<p class="pull-right"><a href="http://320press.com" id="credit320" title="By the dudes of 320press">320press</a></p>
+					{{ endif }}
 			
 					<p class="attribution">&copy; {{ settings:site_name }}</p>
 				
@@ -30,15 +25,12 @@
 		
 		<!-- scripts are now optimized via Modernizr.load -->	
 		{{ theme:js file="scripts.js" }}
-		<!-- <script src="<?php //echo get_template_directory_uri(); ?>/library/js/scripts.js"></script>-->
 		
 		<!--[if lt IE 7 ]>
   			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
   			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 		<![endif]-->
 		
-		
-
 	</body>
 
 </html>
