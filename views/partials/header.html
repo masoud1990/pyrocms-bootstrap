@@ -15,21 +15,15 @@
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		
 		<!-- icons & favicons -->
-		<!-- For iPhone 4 -->
-<!--                <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php //echo get_template_directory_uri(); ?>/library/images/icons/h/apple-touch-icon.png">-->
-                {{ theme:favicon file="icons/h/apple-touch-icon.png" rel="apple-touch-icon-precomposed" }}
+        {{ theme:favicon file="icons/h/apple-touch-icon.png" rel="apple-touch-icon-precomposed" }}
 		<!-- For iPad 1-->
-<!--		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php //echo get_template_directory_uri(); ?>/library/images/icons/m/apple-touch-icon.png">-->
 		{{ theme:favicon file="icons/l/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" }}
-                <!-- For iPhone 3G, iPod Touch and Android -->
-<!--		<link rel="apple-touch-icon-precomposed" href="<?php //echo get_template_directory_uri(); ?>/library/images/icons/l/apple-touch-icon-precomposed.png">-->
-                {{ theme:favicon file="icons/l/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" }}
+        <!-- For iPhone 3G, iPod Touch and Android -->
+        {{ theme:favicon file="icons/l/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed" }}
 		<!-- For Nokia -->
-<!--		<link rel="shortcut icon" href="<?php //echo get_template_directory_uri(); ?>/library/images/icons/l/apple-touch-icon.png">-->
-                {{ theme:favicon file="icons/l/apple-touch-icon.png" rel="shortcut icon" }}
+        {{ theme:favicon file="icons/l/apple-touch-icon.png" rel="shortcut icon" }}
 		<!-- For everything else -->
-<!--		<link rel="shortcut icon" href="<?php //echo get_template_directory_uri(); ?>/favicon.ico">-->
-                {{ theme:favicon }}
+        {{ theme:favicon }}
 		
 		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -46,20 +40,9 @@
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		
-<!--  		<link rel="pingback" href="<?php //bloginfo('pingback_url'); ?>">-->
-		
-		<!-- wordpress head functions -->
-		<!-- <?php //wp_head(); ?> -->
+		<!-- pyrocms meta -->
 		{{ template:metadata }}
-		<!-- end of wordpress head -->
-		
-<!--		<link rel="stylesheet" href="<?php //echo get_template_directory_uri(); ?>/css/bootstrap.min.css">-->
-                {{ if theme:options:use_bootswatch == 'default' }}
-                {{ theme:css file="bootstrap.min.css" }}
-                {{ else }}
-		{{ theme:css file="bootswatch/{{ theme:options:use_bootswatch }}/bootstrap.min.css" }}
-		{{ endif }}
-		{{ theme:css file="bootstrap-responsive.min.css" }}
+		<!-- end of pyrocms meta -->
 		
 		<?php /*
 			$theme_options_styles = '';
@@ -211,36 +194,17 @@
 			}
 		
 			$bootstrap_theme = of_get_option('wpbs_theme');
-			$use_theme = of_get_option('showhidden_themes');
-			
-			if( $bootstrap_theme && $use_theme ){
-				if( $bootstrap_theme == 'default' ){ */
-		?>
-<!--			<link rel="stylesheet" href="<?php //echo get_template_directory_uri(); ?>/css/bootstrap.min.css">-->
-			
-		<?php
-				//}
-				//else {
-		?>
-<!--			<link rel="stylesheet" href="<?php //echo get_template_directory_uri(); ?>/admin/themes/<?php //echo $bootstrap_theme; ?>.css">-->
-		<?php
-				//}
-			//}
-		?>
+			$use_theme = of_get_option('showhidden_themes');*/
+			?>
 		
-<!--		<link rel="stylesheet" href="<?php //echo get_template_directory_uri(); ?>/css/bootstrap-responsive.min.css">-->
+	{{ theme:css file="style.css" }}
+	{{ if theme:options:use_bootswatch == 'default' }}
+    {{ theme:css file="bootstrap.min.css" }}
+    {{ else }}
+	{{ theme:css file="bootswatch/{{ theme:options:use_bootswatch }}/bootstrap.min.css" }}
+	{{ endif }}
+	{{ theme:css file="bootstrap-responsive.min.css" }}
                 
-<!--		<link rel="stylesheet" href="<?php //bloginfo('stylesheet_url'); ?>">-->
-		{{ theme:css file="style.css" }}
-		<?php 
-
-			// check wp user level
-			//get_currentuserinfo(); cc
-			// store to use later
-			//global $user_level; 
-		
-		?>
-				
 	</head>
 	
 	<body class="{{ url:segments segment="1" default="home" }}">
